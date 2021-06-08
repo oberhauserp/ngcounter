@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Counter} from '../counter';
 
 @Component({
@@ -7,7 +7,7 @@ import {Counter} from '../counter';
   styleUrls: ['./counter-detail-component.component.css']
 })
 export class CounterDetailComponentComponent implements OnInit {
-  counter: Counter
+  @Input() counter: Counter;
   constructor() {}
 
   ngOnInit(): void {
