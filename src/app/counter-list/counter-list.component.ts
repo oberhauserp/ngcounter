@@ -15,8 +15,7 @@ export class CounterListComponent implements OnInit {
   name = 'Counter Wall';
 
   create(){
-    const counter = new Counter();
-    this.counters.push(counter)
+    this.counters.push(new Counter())
   }
   ngOnInit(): void {
   }
