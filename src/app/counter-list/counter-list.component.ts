@@ -24,16 +24,14 @@ export class CounterListComponent implements OnInit {
     if(this.counters.length === 5)
       this.upgradeCounter();
     else{
-      const counter = new Counter();
-      this.counters.push(counter);
+      this.counters.push(new Counter());
     }
   }
   
   upgradeCounter()
   {
     this.counters =[];
-    const superCounter = new SuperCounter()
-    this.superCounters.push(superCounter);
+    this.superCounters.push(new SuperCounter());
   }
 
 }

@@ -7,7 +7,7 @@ import {SuperCounter} from '../super-counter';
   styleUrls: ['./super-counter.component.css']
 })
 export class SuperCounterComponent implements OnInit {
-  @Input() counter: SuperCounter;
+  @Input() counter: SuperCounter = new SuperCounter();
   constructor() { }
 
   ngOnInit(): void {
@@ -21,7 +21,6 @@ export class SuperCounterComponent implements OnInit {
   decrement()
   {
     if(this.counter.value > 0)
-      this.counter.value += 3;
+      this.counter.value -= 3;
   }
-
 }
