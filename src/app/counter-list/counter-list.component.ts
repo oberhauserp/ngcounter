@@ -3,26 +3,26 @@ import {Counter} from '../counter';
 import {SuperCounter} from '../super-counter';
 
 @Component({
-  selector: 'app-counter-list',
+  selector: 'counter-list',
   templateUrl: './counter-list.component.html',
   styleUrls: ['./counter-list.component.css']
 })
 export class CounterListComponent implements OnInit {
+  counters: Counter[];
+  superCounters: SuperCounter[];
+  name = 'Counter Wall';
 
   constructor() {
     this.counters = []
     this.superCounters = [];
    }
-  counters: Counter[];
-  superCounters: SuperCounter[];
-  name = 'Counter Wall';
-
+ 
   ngOnInit(): void {
   }
 
   create(){
     if(this.counters.length === 5)
-      this.counters.push(new Counter())
+      this.upgradeCounter();
     else{
       const counter = new Counter();
       this.counters.push(counter);
@@ -32,7 +32,8 @@ export class CounterListComponent implements OnInit {
   upgradeCounter()
   {
     this.counters =[];
-    this.superCounters.push(new SuperCounter());
+    const superCounter = new SuperCounter()
+    this.superCounters.push(superCounter);
   }
 
 }
