@@ -7,7 +7,7 @@ import {Counter} from '../counter';
   styleUrls: ['./counter-detail-component.component.css']
 })
 export class CounterDetailComponentComponent implements OnInit {
-  counter: Counter;
+  @Input() counter: Counter;
   constructor() {}
 
   ngOnInit(): void {
@@ -20,6 +20,7 @@ export class CounterDetailComponentComponent implements OnInit {
 
   decrement()
   {
+    if(this.counter.value > 0)
     this.counter.value--;
   }
 
